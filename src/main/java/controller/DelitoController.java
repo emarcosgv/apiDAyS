@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class DelitoController extends BaseController{
 
     @GetMapping(value = "/delincuente/{id}")
-    // @Operation(summary = "Get a delicuente", description = "Get a delincuente") // Comentado o eliminado
-    // @ApiResponses(value = { // Comentado o eliminado
-    //     @ApiResponse(responseCode = "200", description = "OK", content = { // Comentado o eliminado
-    //         @Content(mediaType = "application/json", schema = @Schema(implementation = DelincuenteOutputDTO.class)) // Comentado o eliminado
-    //     }) // Comentado o eliminado
-    // }) // Comentado o eliminado
+     @Operation(summary = "Get a delicuente", description = "Get a delincuente")
+     @ApiResponses(value = {
+         @ApiResponse(responseCode = "200", description = "OK", content = {
+             @Content(mediaType = "application/json", schema = @Schema(implementation = DelincuenteOutputDTO.class))
+         })
+     })
     public String getDelincuente(@PathVariable Long id) { // Cambiado el tipo de retorno a String y el parámetro si es necesario
         return "Hello World"; // Retorna la cadena "Hello World"
     }
